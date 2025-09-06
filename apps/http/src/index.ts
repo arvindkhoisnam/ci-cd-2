@@ -1,15 +1,17 @@
-import express from "express";
+import express, { Request, Response } from "express";
 import { client } from "@repo/db/client";
 
 const app = express();
 
+console.log("Hello world");
+
 app.use(express.json());
 
-app.get("/health", (req, res) => {
+app.get("/health", (req: Request, res: Response) => {
   res.status(200).json({ message: "Healthy Server" });
 });
 
-app.post("/signup", async (req, res) => {
+app.post("/signup", async (req: Request, res: Response) => {
   const { username, password } = req.body;
 
   const newUser = await client.user.create({
@@ -18,7 +20,6 @@ app.post("/signup", async (req, res) => {
       password,
     },
   });
-
   res.status(200).json({ message: `New user created with id ${newUser.id}` });
 });
 
