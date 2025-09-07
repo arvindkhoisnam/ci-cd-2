@@ -23,3 +23,5 @@ jobs:
           file: ./docker/be/Dockerfile
           push: true
           tags: arvindkhoisnam/ci-cd-be:${{ github.sha }}
+          build-args: |
+            DATABASE_URL=${{ secrets.DATABASE_URL }}
