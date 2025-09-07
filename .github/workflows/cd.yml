@@ -25,6 +25,7 @@ jobs:
           tags: arvindkhoisnam/ci-cd-be:${{ github.sha }}
           build-args: |
             DATABASE_URL=${{ secrets.DATABASE_URL }}
+
       - name: Deploy to VM
         uses: appleboy/ssh-action@master
         with:
