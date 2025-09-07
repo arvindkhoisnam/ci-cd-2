@@ -6,10 +6,16 @@ const app = express();
 console.log("Hello world");
 
 app.use(express.json());
+app.set("trust proxy", true);
 
 app.get("/", (req: Request, res: Response) => {
   console.log(req.ip);
-  res.status(200).json({ message: "chanbi randeshwariiiiiii 🤭🤪" });
+  res
+    .status(200)
+    .json({
+      message:
+        "Hi 👋! Arvind Khoisnam here. Thanks for visiting 🫡. Have a nice day🚀.",
+    });
 });
 
 app.post("/signup", async (req: Request, res: Response) => {
