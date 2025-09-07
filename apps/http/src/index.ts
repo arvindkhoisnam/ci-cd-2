@@ -11,8 +11,9 @@ app.set("trust proxy", true);
 app.get("/", (req: Request, res: Response) => {
   console.log(req.ip);
   res.status(200).json({
-    message:
-      "Hi👋! Arvind Khoisnam here. Thanks for visiting 🫡. Have a nice day🚀.",
+    message: `Hi👋! Arvind Khoisnam here. 
+    Thanks for visiting🫡. Have a nice day🚀. 
+    Successfully migrated from Digital Ocean to Hetzner🎊.`,
   });
 });
 
