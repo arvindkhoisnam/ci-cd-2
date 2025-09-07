@@ -29,7 +29,9 @@ jobs:
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.VM_HOST }}
+          username: root
           key: ${{ secrets.VM_SSH_KEY }}
+          port: 22
           script: |
             docker pull arvindkhoisnam/ci-cd-be:${{ github.sha }}
             docker stop ci-cd-be || true
