@@ -39,6 +39,7 @@ COPY apps/ws ./apps/ws
 COPY packages ./packages
 
 RUN pnpm install --ignore-scripts
+ENV DATABASE_URL=${DATABASE_URL}
 RUN pnpm run prisma-migrate-gen 
 RUN pnpm run build
 

@@ -25,3 +25,13 @@ jobs:
           tags: arvindkhoisnam/ci-cd-be:${{ github.sha }}
           build-args: |
             DATABASE_URL=${{ secrets.DATABASE_URL }}
+      - name: Deploy to VM
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VM_HOST }}
+          key: ${{ secrets.VM_SSH_KEY }}
+          script: |
+            docker pull arvindkhoisnam/ci-cd-be:${{ github.sha }}
+            docker stop ci-cd-be || true
+            docker rm ci-cd-be || true
+            docker run -d --name ci-cd-be -p 3001:3001 arvindkhoisnam/ci-cd-be:${{ github.sha }}
