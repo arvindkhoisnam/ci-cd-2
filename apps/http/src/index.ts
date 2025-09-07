@@ -8,7 +8,7 @@ console.log("Hello world");
 app.use(express.json());
 
 app.get("/health", (req: Request, res: Response) => {
-  res.status(200).json({ message: "Healthy Server" });
+  res.status(200).json({ message: "Healthy Server. CI/CD implemented 👍" });
 });
 
 app.post("/signup", async (req: Request, res: Response) => {
