@@ -8,7 +8,8 @@ console.log("Hello world");
 app.use(express.json());
 
 app.get("/", (req: Request, res: Response) => {
-  res.status(200).json({ message: "Healthy Server. CI/CD implemented 👍" });
+  console.log(req.ip);
+  res.status(200).json({ message: "chanbi randeshwariiiiiii 🤭🤪" });
 });
 
 app.post("/signup", async (req: Request, res: Response) => {
