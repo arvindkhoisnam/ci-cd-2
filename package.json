@@ -9,7 +9,7 @@
     "check-types": "turbo run check-types",
     "prisma-migrate-gen": "cd packages/db && pnpx prisma migrate dev --name init && pnpx prisma generate",
     "http-start": "cd apps/http && node ./dist/index.js",
-    "ws-start": "cd apps/ws && tsc -b && node ./dist/index.js"
+    "ws-start": "cd apps/ws && node ./dist/index.js"
   },
   "devDependencies": {
     "prettier": "^3.6.2",
