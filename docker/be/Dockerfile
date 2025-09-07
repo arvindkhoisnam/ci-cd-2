@@ -8,8 +8,8 @@ COPY packages ./packages
 COPY apps/http ./apps/http
 
 RUN pnpm install 
-RUN pnpm run build 
 RUN pnpm run prisma-migrate-gen
+RUN pnpm run build 
 
 
 # ---- Runtime stage ----
