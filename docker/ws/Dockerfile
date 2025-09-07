@@ -30,7 +30,7 @@
 FROM node:24-alpine as builder
 
 WORKDIR /app
-
+ARG DATABASE_URL
 RUN corepack enable
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml turbo.json ./
